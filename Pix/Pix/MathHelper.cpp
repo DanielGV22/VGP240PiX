@@ -17,9 +17,7 @@ bool MathHelper::IsEqual(float a, float b) {
 		return sqrt(MagnitudeSquared(v));
 	}
 
-	float MathHelper::Magnitude(const Vector2& v){
-		return sqrt(MagnitudeSquared(v));
-	}
+	
 
 	float MathHelper::Magnitude(const Vector3& v){
 		return sqrt(MagnitudeSquared(v));
