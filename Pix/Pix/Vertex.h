@@ -33,5 +33,7 @@ inline Vertex LerpVertex(const Vertex& a, const Vertex& b, float t) {
 	v.pos = LerpPosition(a.pos, b.pos, t);
 	v.color = LerpColor(a.color, b.color, t);
 
-	v.pos.x=floorf(v.pos.x)
+	v.pos.x = floorf(v.pos.x + 0.5f);
+	v.pos.y = floorf(v.pos.y + 0.5f);
+	return v;
 }
