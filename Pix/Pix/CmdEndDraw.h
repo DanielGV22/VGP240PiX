@@ -8,7 +8,7 @@ public:
 
 	const char* GetName()override {
 
-		return "End draw";
+		return "EndDraw";
 
 	}
 
