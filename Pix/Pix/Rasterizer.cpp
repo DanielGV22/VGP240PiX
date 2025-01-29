@@ -106,7 +106,7 @@ void Rasterizer::DrawFilledTriangle(const Vertex& a, const Vertex& b, const Vert
 		for(int y = startY; y <= endY; ++y) {
 			float t = static_cast<float>(y - startY) / dy;
 			Vertex aSide = LerpVertex(a, c, t);
-			Vertex bSide = LerpVertex(a, b, t);
+			Vertex bSide = LerpVertex(b, c, t);
 			DrawLine(aSide,bSide);
 		}
 	}
