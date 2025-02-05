@@ -94,7 +94,7 @@ struct Matrix4 {
 
 	}
 
-	static Matrix4 Rotationy(float rad) {
+	static Matrix4 RotationY(float rad) {
 		const float s = sinf(rad);
 		const float c = cosf(rad);
 		return Matrix4(
@@ -105,7 +105,7 @@ struct Matrix4 {
 		);
 	}
 
-	static Matrix4 Rotation2(float rad) {
+	static Matrix4 RotationZ(float rad) {
 		const float s = sinf(rad);
 		const float c = cosf(rad);
 		return Matrix4(
