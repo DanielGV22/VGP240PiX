@@ -11,7 +11,7 @@ public:
 	void SetPosition(const Vector3& position);
 	void SetDirection(const Vector3& direction);
 	void SetNearPlane(float nearPlane);
-	void SetFarPlane(float FarPlane); 
+	void SetFarPlane(float farPlane); 
 	void SetFOV(float fov);
 
 	Matrix4 GetViewMatrix() const;
