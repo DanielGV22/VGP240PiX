@@ -13,6 +13,7 @@
 #include "CmdSetClipping.h"
 #include "CmdMatrix.h"
 #include "CmdCamera.h"
+#include "CmdMaterial.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -65,6 +66,14 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetCameraNear>();
 	RegisterCommand<CmdSetCameraFar>();
 	RegisterCommand<CmdSetCameraFov>();
+
+	//Material commands
+	RegisterCommand<CmdSetMaterialEmissive>();
+	RegisterCommand<CmdSetMaterialAmbient>();
+	RegisterCommand<CmdSetMaterialDiffuse>();
+	RegisterCommand<CmdSetMaterialSpecular>();
+	RegisterCommand<CmdSetMaterialShininess>();
+
 
 
 }
