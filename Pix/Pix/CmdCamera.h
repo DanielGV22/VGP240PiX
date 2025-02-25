@@ -5,13 +5,15 @@
 class CmdSetCameraPosition : public Command
 {
 public:
-	const char* GetName() override {
+	const char* GetName() override
+	{
 		return "SetCameraPosition";
 	}
 
-	const char* GetDescription() override 
+	const char* GetDescription() override
 	{
-		return "Set the camera position(x, y, z)"
+		return
+			"SetCameraPosition(x, y, z)"
 			"\n"
 			"- sets the camera position";
 	}
@@ -22,13 +24,15 @@ public:
 class CmdSetCameraDirection : public Command
 {
 public:
-	const char* GetName() override {
+	const char* GetName() override
+	{
 		return "SetCameraDirection";
 	}
 
 	const char* GetDescription() override
 	{
-		return "Set the camera Direction(x, y, z)"
+		return
+			"SetCameraDirection(x, y, z)"
 			"\n"
 			"- sets the camera direction";
 	}
@@ -36,16 +40,18 @@ public:
 	bool Execute(const std::vector<std::string>& params) override;
 };
 
-class CmdSetCameraNear: public Command
+class CmdSetCameraNear : public Command
 {
 public:
-	const char* GetName() override {
+	const char* GetName() override
+	{
 		return "SetCameraNear";
 	}
 
 	const char* GetDescription() override
 	{
-		return "Set the camera near(value)"
+		return
+			"SetCameraNear(value)"
 			"\n"
 			"- sets the camera near value";
 	}
@@ -53,16 +59,18 @@ public:
 	bool Execute(const std::vector<std::string>& params) override;
 };
 
-class CmdSetCameraFar: public Command
+class CmdSetCameraFar : public Command
 {
 public:
-	const char* GetName() override {
+	const char* GetName() override
+	{
 		return "SetCameraFar";
 	}
 
 	const char* GetDescription() override
 	{
-		return "Set the camera far(value)"
+		return
+			"SetCameraFar(value)"
 			"\n"
 			"- sets the camera far value";
 	}
@@ -73,18 +81,18 @@ public:
 class CmdSetCameraFov : public Command
 {
 public:
-	const char* GetName() override {
+	const char* GetName() override
+	{
 		return "SetCameraFov";
 	}
 
 	const char* GetDescription() override
 	{
-		return "Set the camera Fov(radians)"
+		return
+			"SetCameraFov(radians)"
 			"\n"
 			"- sets the camera field of view angle";
 	}
 
 	bool Execute(const std::vector<std::string>& params) override;
 };
-
-

@@ -2,28 +2,20 @@
 
 #include "Command.h"
 
-class CmdBeginDraw : public  Command{
-
+class CmdBeginDraw : public Command
+{
 public:
 
-	const char* GetName()override {
-
+	const char* GetName() override
+	{
 		return "BeginDraw";
-
 	}
-
-	const char* GetDescription()override {
-
-		return "BeginDraw(Topology)\n"
+	const char* GetDescription() override
+	{
+		return "BeginDraw(topology)\n"
 			"\n"
-			"begins draw.\n"
-			"stores topology";
-
+			"- begins draw.\n"
+			"- stores topology";
 	}
-
-	bool Execute(const std::vector < std::string>& params)override;
-
-private:
-
-
+	bool Execute(const std::vector <std::string>& params) override;
 };

@@ -1,8 +1,10 @@
 #include "CmdBeginDraw.h"
 #include "PrimitivesManager.h"
 
-bool CmdBeginDraw::Execute(const std::vector<std::string>& params) {
-	if (params.size() < 1) {
+bool CmdBeginDraw::Execute(const std::vector <std::string>& params)
+{
+	if (params.size() < 1)
+	{
 		return false;
 	}
 
@@ -10,11 +12,8 @@ bool CmdBeginDraw::Execute(const std::vector<std::string>& params) {
 	if (params[0] == "point") { topology = Topology::Point; }
 	else if (params[0] == "line") { topology = Topology::Line; }
 	else if (params[0] == "triangle") { topology = Topology::Triangle; }
-	else {
-		return false;
-	}
+	else { false; }
 
-	bool applyTransform = params.size()> 1 && params[1] == "true";
+	bool applyTransform = params.size() > 1 && params[1] == "true";
 	return PrimitivesManager::Get()->BeginDraw(topology, applyTransform);
 }
- 

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Vertex.h"
 
 class Clipper
@@ -12,10 +13,9 @@ public:
 	bool ClipLine(Vertex& a, Vertex& b);
 	bool ClipTriangle(std::vector<Vertex>& vertices);
 
-	bool isClipping()const;
+	bool IsClipping() const;
 	void SetClipping(bool clip);
-	
-	private:
-		bool mClipping = false;
 
+private:
+	bool mClipping = false;
 };

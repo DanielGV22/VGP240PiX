@@ -1,55 +1,59 @@
 #include "MathHelper.h"
+#include <cmath>
 
-bool MathHelper::IsEqual(float a, float b) {
+bool MathHelper::IsEqual(float a, float b)
+{
 	return abs(a - b) < 0.01f;
 }
 
-void MathHelper::FlattenVectorScreenCoords(Vector3& v) {
-	v.x=floor(v.x + 0.5f);
-	v.y=floor(v.y + 0.5f);
+void MathHelper::FlattenVectorScreenCoords(Vector3& v)
+{
+	v.x = floorf(v.x + 0.5f);
+	v.y = floorf(v.y + 0.5f);
 }
 
-	float MathHelper::MagnitudeSquared(const Vector2 & v){
-		return v.x * v.x + v.y * v.y;
-	}
-
-	float MathHelper::MagnitudeSquared(const Vector3& v){
-		return v.x * v.x + v.y * v.y + v.z * v.z;
-	}
-
-	float MathHelper::Magnitude(const Vector2& v){
-		return sqrt(MagnitudeSquared(v));
-	}
-
-	
-
-	float MathHelper::Magnitude(const Vector3& v){
-		return sqrt(MagnitudeSquared(v));
-	}
+float MathHelper::MagnitudeSquared(const Vector2& v)
+{
+	return v.x * v.x + v.y * v.y;
+}
+float MathHelper::MagnitudeSquared(const Vector3& v)
+{
+	return v.x * v.x + v.y * v.y + v.z * v.z;
+}
+	  
+float MathHelper::Magnitude(const Vector2& v)
+{
+	return sqrt(MagnitudeSquared(v));
+}
+float MathHelper::Magnitude(const Vector3& v)
+{
+	return sqrt(MagnitudeSquared(v));
+}
 
 Vector2 MathHelper::Normalize(const Vector2& v)
 {
-	return v/ Magnitude(v);
+	return v / Magnitude(v);
 }
-Vector3 MathHelper::Normalize(const Vector3& v) {
- 	return v / Magnitude(v);
+Vector3 MathHelper::Normalize(const Vector3& v)
+{
+	return v / Magnitude(v);
 }
 
-float MathHelper::Dot(const Vector2& a, const Vector2& b) {
+float MathHelper::Dot(const Vector2& a, const Vector2& b)
+{
 	return a.x * b.x + a.y * b.y;
-
 }
-float MathHelper::Dot(const Vector3& a, const Vector3& b) {
+float MathHelper::Dot(const Vector3& a, const Vector3& b)
+{
 	return a.x * b.x + a.y * b.y + a.z * b.z;
-
 }
 
-Vector3 MathHelper::Cross(const Vector3& a, const Vector3& b) {
+Vector3 MathHelper::Cross(const Vector3& a, const Vector3& b)
+{
 	return Vector3(
 		a.y * b.z - a.z * b.y,
 		a.z * b.x - a.x * b.z,
-		a.x * b.y - a.y * b.x
-	);
+		a.x * b.y - a.y * b.x);
 }
 
 Vector3 MathHelper::TransformCoord(const Vector3& v, const Matrix4& m)
@@ -58,25 +62,27 @@ Vector3 MathHelper::TransformCoord(const Vector3& v, const Matrix4& m)
 	const float invW = IsEqual(w, 0.0f) ? 1.0f : 1.0f / w;
 	return Vector3(
 		((v.x * m._11) + (v.y * m._21) + (v.z * m._31) + (1.0f * m._41)) * invW,
-		(v.x * m._12) + (v.y * m._22) + (v.z * m._32) + (1.0f * m._42) * invW,
-		(v.x * m._13) + (v.y * m._23) + (v.z * m._33) + (1.0f * m._43) * invW
+		((v.x * m._12) + (v.y * m._22) + (v.z * m._32) + (1.0f * m._42)) * invW,
+		((v.x * m._13) + (v.y * m._23) + (v.z * m._33) + (1.0f * m._43)) * invW
 	);
+
+	return Vector3();
 }
 
 Vector3 MathHelper::TransformNormal(const Vector3& v, const Matrix4& m)
 {
 	return Normalize(Vector3(
-		(v.x * m._11) + (v.y * m._12) + (v.z * m._13)  ,
-		(v.x * m._21) + (v.y * m._22) + (v.z * m._23)  ,
-		(v.x * m._31) + (v.y * m._32) + (v.z * m._33) 
-	));
+		(v.x * m._11) + (v.y * m._21) + (v.z * m._31),
+		(v.x * m._12) + (v.y * m._22) + (v.z * m._32),
+		(v.x * m._13) + (v.y * m._23) + (v.z * m._33)
+		));
 }
 
 Matrix4 MathHelper::Inverse(const Matrix4& m)
 {
 	const float determinant = Determinant(m);
 	const float invDet = 1.0f / determinant;
-	return Adjoint(m)*invDet;
+	return Adjoint(m) * invDet;
 }
 
 Matrix4 MathHelper::Transpose(const Matrix4& m)

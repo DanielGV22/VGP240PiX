@@ -105,11 +105,11 @@
     <ClCompile Include="MathHelper.cpp">
       <Filter>Math</Filter>
     </ClCompile>
-    <ClCompile Include="CmdBeginDraw.cpp">
-      <Filter>Commands</Filter>
-    </ClCompile>
     <ClCompile Include="PrimitivesManager.cpp">
       <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdBeginDraw.cpp">
+      <Filter>Commands</Filter>
     </ClCompile>
     <ClCompile Include="CmdEndDraw.cpp">
       <Filter>Commands</Filter>
@@ -142,6 +142,33 @@
       <Filter>Graphics</Filter>
     </ClCompile>
     <ClCompile Include="CmdCamera.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdSetCullMode.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthBuffer.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdEnableDepth.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdVarBool.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialManager.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdMaterial.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="LightManager.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="LightTypes.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdLights.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
   </ItemGroup>
@@ -197,11 +224,11 @@
     <ClInclude Include="Vertex.h">
       <Filter>Math</Filter>
     </ClInclude>
-    <ClInclude Include="CmdBeginDraw.h">
-      <Filter>Commands</Filter>
-    </ClInclude>
     <ClInclude Include="PrimitivesManager.h">
       <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdBeginDraw.h">
+      <Filter>Commands</Filter>
     </ClInclude>
     <ClInclude Include="CmdEndDraw.h">
       <Filter>Commands</Filter>
@@ -224,7 +251,7 @@
     <ClInclude Include="CmdSetClipping.h">
       <Filter>Commands</Filter>
     </ClInclude>
-    <ClInclude Include="Matrix.h">
+    <ClInclude Include="Matrix4.h">
       <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="MatrixStack.h">
@@ -237,6 +264,36 @@
       <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="CmdCamera.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdSetCullMode.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthBuffer.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdEnableDepth.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdVarBool.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialManager.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdMaterial.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="LightManager.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="LightTypes.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdLights.h">
       <Filter>Commands</Filter>
     </ClInclude>
   </ItemGroup>
@@ -254,7 +311,7 @@
       <UniqueIdentifier>{f4ee6086-a9c7-41f0-9695-19708a6954c3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Math">
-      <UniqueIdentifier>{5bf16b64-c55d-4a88-a5d2-a6b69b40d1b2}</UniqueIdentifier>
+      <UniqueIdentifier>{935a773b-4262-4c79-aafa-c409e723f93b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

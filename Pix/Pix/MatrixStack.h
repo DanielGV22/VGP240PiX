@@ -3,9 +3,9 @@
 #include "MathHelper.h"
 #include <vector>
 
-class MatrixStack {
+class MatrixStack
+{
 public:
-
 	static MatrixStack* Get();
 
 	void OnNewFrame();
