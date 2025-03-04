@@ -21,6 +21,8 @@
 
 #include "CmdMaterial.h"
 #include "CmdLights.h"
+#include "CmdModel.h"
+#include "CmdSetShadeMode.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -44,12 +46,14 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetColor>();
 	RegisterCommand<CmdSetFillMode>();
 	RegisterCommand<CmdEnableDepth>();
+	RegisterCommand<CmdSetShadeMode>();
 
 	// Primitives commands
 	RegisterCommand<CmdBeginDraw>();
 	RegisterCommand<CmdEndDraw>();
 	RegisterCommand<CmdAddVertex>();
 	RegisterCommand<CmdSetCullMode>();
+	RegisterCommand<CmdModel>();
 
 	// Viewport commands
 	RegisterCommand<CmdSetViewport>();
@@ -84,6 +88,7 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetLightSpecular>();
 	RegisterCommand<CmdAddDirectionalLight>();
 	RegisterCommand<CmdAddPointLight>();
+	RegisterCommand<CmdAddSpotLight>();
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()
